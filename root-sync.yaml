@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: sync-operator-config
+  namespace: config-management-system
+spec:
+  sourceFormat: hierarchy
+  git:
+    repo: https://github.com/RICH0423/k8s-config-sync
+    revision: HEAD
+    branch: master
+    dir: "/policy"
+    auth: token
